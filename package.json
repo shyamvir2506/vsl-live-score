@@ -1,0 +1,16 @@
+{
+	"name": "vsl-live-score",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error no test specified\" && exit 1",
+		"start": "node index.js"
+	},
+	"devDependencies": {},
+	"dependencies": {
+		"basic-auth": "1.0.3",
+		"express": "4.13.3",
+		"socket.io": "1.3.7",
+		"socket.io-cookie": "0.0.1"
+	}
+}
