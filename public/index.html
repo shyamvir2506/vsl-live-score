@@ -1,14 +1,155 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<title>SocketIO-Example</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.7/socket.io.min.js"></script>
-</head>
-<body>
-    <div id="messages">
-
+  <head>
+    <title>VDX Sports League</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.7/socket.io.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Khand";
+        src: url(https://cdn.glitch.global/e3769af5-a3ce-443d-b8c6-88b0d77b034d/Khand-Bold.ttf?v=1689011416164);
+      }
+      body{
+        margin: 0px;
+        padding: 0px;
+      }
+      .main {
+        
+        margin: auto;
+        color: white;
+        position: absolute;
+        top: 620px;
+        font-size: 53px;
+        font-family: "Khand";
+      }
+      .teams {
+        display: flex;
+        flex-direction: row;
+        margin-top: -150px;
+        margin-left: 620px;
+        position: absolute;
+        
+      }
+      .team {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 200px;
+        height: auto;
+        justify-content: space-between;
+      }
+      .score {
+        width: 100px;
+        height: 60px;
+        text-align: center;
+      }
+      .total-scores {
+        font-size: 100px;
+        text-align: center;
+        margin-left: 1730px;
+        margin-top: -415px;
+      }
+      #team-ni{
+        margin-left: 60px;
+      }
+      #team-jl{
+        margin-left: 50px;
+      }
+      #team-sa{
+        margin-left: 50px;
+      }
+      #ni-total-score{
+        margin-top: 60px;
+      }
+      #jl-total-score{
+        margin-top: 60px;
+      }
+      #sa-total-score{
+        margin-top: 80px;
+      }
+      .tagline{
+        width: 1710px;
+        text-align: center;
+        margin-left: 157px;
+        margin-top: 10px;
+        font-size: 35px;
+        animation: scrollText 15s infinite linear;
+      }
+      @keyframes scrollText {
+        from {transform: translateX(100%);}
+        to {transform: translateX(-100%);}
+      }
+      
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <div >
+      <img src="https://cdn.glitch.global/e3769af5-a3ce-443d-b8c6-88b0d77b034d/background.png?v=1689011071283" />
     </div>
+    <div class="main">
+      <div id="year">
+        <div></div>
+      </div>
+      <div id="teams" class="teams">
+        <div class="team" id="team-av">
+          <div class="score" id="av-mdtt-score">0</div>
+          <div class="score" id="av-wc-score">0</div>
+          <div class="score" id="av-dart-score">0</div>
+          <div class="score" id="av-foos-score">0</div>
+          <div class="score" id="av-tt-score">0</div>
+          <div class="score" id="av-ca-score">0</div>
+          <div class="score" id="av-ch-score">0</div>
+          <div class="score" id="av-bb-score">0</div>
+          <div class="score" id="av-pool-score">0</div>
+        </div>
+        <div class="team" id="team-ni">
+            <div class="score" id="ni-mdtt-score">0</div>
+            <div class="score" id="ni-wc-score">0</div>
+            <div class="score" id="ni-dart-score">0</div>
+            <div class="score" id="ni-foos-score">0</div>
+            <div class="score" id="ni-tt-score">0</div>
+            <div class="score" id="ni-ca-score">0</div>
+            <div class="score" id="ni-ch-score">0</div>
+            <div class="score" id="ni-bb-score">0</div>
+            <div class="score" id="ni-pool-score">0</div>
+          </div>
+          <div class="team" id="team-jl">
+            <div class="score" id="jl-mdtt-score">0</div>
+            <div class="score" id="jl-wc-score">0</div>
+            <div class="score" id="jl-dart-score">0</div>
+            <div class="score" id="jl-foos-score">0</div>
+            <div class="score" id="jl-tt-score">0</div>
+            <div class="score" id="jl-ca-score">0</div>
+            <div class="score" id="jl-ch-score">0</div>
+            <div class="score" id="jl-bb-score">0</div>
+            <div class="score" id="jl-pool-score">0</div>
+          </div>
+          <div class="team" id="team-sa">
+            <div class="score" id="sa-mdtt-score">0</div>
+            <div class="score" id="sa-wc-score">0</div>
+            <div class="score" id="sa-dart-score">0</div>
+            <div class="score" id="sa-foos-score">0</div>
+            <div class="score" id="sa-tt-score">0</div>
+            <div class="score" id="sa-ca-score">0</div>
+            <div class="score" id="sa-ch-score">0</div>
+            <div class="score" id="sa-bb-score">0</div>
+            <div class="score" id="sa-pool-score">0</div>
+          </div>
+      </div>
+      <div class="total-scores">
+        <div id="av-total-score">0</div>
+        <div id="ni-total-score">0</div>
+        <div id="jl-total-score">0</div>
+        <div id="sa-total-score">0</div>
+      </div>
+      <div style="overflow: hidden;width: 1680px;height: auto;margin-left: 158px;">
+        <div class="tagline">
+            Talent wins games, but teamwork and intelligence win chapions!
+          </div>
+      </div>
+     
+    </div>
+    <footer></footer>
     <script src="js/index.js"></script>
-
-</body>
+  </body>
 </html>

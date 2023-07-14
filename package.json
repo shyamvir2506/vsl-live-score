@@ -1,15 +1,17 @@
 {
 	"name": "vsl-live-score",
 	"version": "1.0.0",
-	"main": "index.js",
+	"main": "server.js",
 	"scripts": {
 		"test": "echo \"Error no test specified\" && exit 1",
-		"start": "node index.js"
+		"start": "node server.js"
 	},
 	"devDependencies": {},
 	"dependencies": {
 		"basic-auth": "1.0.3",
 		"express": "4.13.3",
+		"mongodb": "^5.7.0",
+		"mongoose": "^7.3.2",
 		"socket.io": "1.3.7",
 		"socket.io-cookie": "0.0.1"
 	}
